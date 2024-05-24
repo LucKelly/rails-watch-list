@@ -1,0 +1,18 @@
+<div class="navbar">
+  🍿🎥✮⋆˙
+  <p> <%= link_to "My Lists", root_path %> </p>
+</div>
+
+<div>
+  <h1> Here's where you create a new list ------ ✨ ദ്ദി(˵ •̀ ᴗ - ˵ ) ✨ </h1>
+</div>
+
+<div>
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "Create" %>
+  <% end %>
+</div>
+
+
+<p>add an "Abort!" button to take you back to the index page</p>

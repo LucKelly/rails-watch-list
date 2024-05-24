@@ -1,0 +1,23 @@
+<div class="navbar">
+  🍿🎥✮⋆˙
+  <p> <%= link_to "My Lists", root_path %>  <%= link_to "New List", new_list_path %></p>
+</div>
+
+<div class="banner">
+  <h1><%= @list.name %></h1>
+  <h4>Number-of-movies-in-list-counter</h4>
+  <img src="https://bwiff.com/wp-content/uploads/2021/02/MI2_001-1024x576.jpg">
+</div>
+
+<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+<div class="row row-cols-4">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src= <%= bookmark.movie.poster_url %> >
+        <div class="card-body">
+          <h5 class="card-title"><strong><%= bookmark.movie.title %></strong> : <%= bookmark.movie.rating %> ⭐️</h5>
+          <p class="card-text"><%= bookmark.movie.overview %></p>
+        </div>
+      </div>
+    <% end %>
+</div>

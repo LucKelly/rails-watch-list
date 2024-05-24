@@ -1,0 +1,21 @@
+<%# this page will be accessed from the list show page  %>
+<%# the create function will redirect back to the list show page %>
+
+
+<div class="navbar">
+  🍿🎥✮⋆˙
+  <p> <%= link_to "My Lists", root_path %> <%= link_to "New List", new_list_path %></p>
+</div>
+
+<div>
+  <h1> Here's where you add a new movie to your list ------ ✨ ദ്ദി(˵ •̀ ᴗ - ˵ ) ✨ </h1>
+</div>
+
+
+<div>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.submit "Add" %>
+  <% end %>
+</div>
